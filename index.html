@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <!-- *****CSS***** -->
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      #parent {
+        margin-top: 7px;
+        gap: 10px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+      .box-design {
+        height: 25px;
+        border-radius: 10px;
+        padding: 3px;
+      }
+      .myBtn {
+        position: relative;
+        top: 550px;
+        left: 1150px;
+        height: 33px;
+        width: 120px;
+        background: rgb(0, 183, 255);
+        border-radius: 20px;
+        color: white;
+        font-size: 15px;
+      }
+      .myBtn:hover {
+        background-color: rgb(92, 159, 184);
+      }
+    </style>
+  </head>
+  <!--*****HTML***** -->
+  <body style="background-color: rgb(218, 247, 251)">
+    <div id="main">
+      <center>
+        <p
+          style="
+            color: darkblue;
+            font-size: 25px;
+            font-weight: bolder;
+            margin-bottom: -10px;
+            margin-top: 25px;
+          "
+        >
+          Enter the Product Details.
+        </p>
+      </center>
+      <br />
+      <div id="parent">
+        <div class="rowcontainer">
+          <table id="mytable">
+            <tr>
+              <td>
+                <input
+                  type="text"
+                  placeholder="Product"
+                  class="box-design"
+                  id="product_name_1"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Qty"
+                  class="box-design"
+                  id="qty_1"
+                  onchange="getAmount()"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Price"
+                  class="box-design"
+                  id="price_1"
+                  onchange="getAmount()"
+                />
+              </td>
+              <td>
+                <input
+                  type="number"
+                  placeholder="Amount"
+                  class="box-design"
+                  id="amount_1"
+                  readonly
+                />
+              </td>
+            </tr>
+          </table>
+        </div>
+        <svg
+          style="position: relative; left: 55px; top: 5px"
+          onclick="add_product()"
+          xmlns="http://www.w3.org/2000/svg"
+          height="1.7em"
+          viewBox="0 0 576 512"
+        >
+          <path
+            d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"
+          />
+        </svg>
+      </div>
+
+      <input
+        type="number"
+        placeholder="Total Amount"
+        class="box-design"
+        id="total_amount"
+        style="position: relative; top: 505px; left: 1295px"
+        readonly
+      />
+
+      <button onclick="data_in_console()" id="myBtn" class="myBtn">
+        Submit
+      </button>
+      <script src="script.js"></script>
+      <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"
+      ></script>
+    </div>
+  </body>
+</html>
